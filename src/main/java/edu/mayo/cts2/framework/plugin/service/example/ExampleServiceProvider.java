@@ -1,6 +1,9 @@
 package edu.mayo.cts2.framework.plugin.service.example;
 
+import java.util.Set;
+
 import edu.mayo.cts2.framework.core.config.PluginConfig;
+import edu.mayo.cts2.framework.core.config.option.Option;
 import edu.mayo.cts2.framework.service.profile.Cts2Profile;
 import edu.mayo.cts2.framework.service.profile.codesystem.CodeSystemReadService;
 import edu.mayo.cts2.framework.service.provider.ServiceProvider;
@@ -21,6 +24,11 @@ public class ExampleServiceProvider implements ServiceProvider {
 			return null;
 		}
 	
+	}
+
+	public Set<Option> getPluginOptions() {
+		//no plugin-specific options defined
+		return null;
 	}
 
 	public void initialize(PluginConfig config) {

@@ -3,6 +3,7 @@ package edu.mayo.cts2.framework.plugin.service.example;
 import org.apache.commons.lang.StringUtils;
 
 import edu.mayo.cts2.framework.model.codesystem.CodeSystemCatalogEntry;
+import edu.mayo.cts2.framework.model.command.ResolvedReadContext;
 import edu.mayo.cts2.framework.model.core.EntryDescription;
 import edu.mayo.cts2.framework.model.service.core.NameOrURI;
 import edu.mayo.cts2.framework.model.service.core.ReadContext;
@@ -16,7 +17,7 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 		return true;
 	}
 
-	public CodeSystemCatalogEntry read(NameOrURI nameOrUri, ReadContext readContext) {
+	public CodeSystemCatalogEntry read(NameOrURI nameOrUri, ResolvedReadContext readContext) {
 		//NameOrURI can either be a CodeSystenName or its URI. For this example,
 		//assume the request is 'by name'.
 		String codeSystemName = nameOrUri.getName();
@@ -40,4 +41,6 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 			
 		return entry;
 	}
+	
+	
 }

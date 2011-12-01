@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>edu.mayo.cts2.framework</groupId>
 		<artifactId>base-service-plugin</artifactId>
-		<version>0.3.1</version>
+		<version>0.4.1</version>
 	</parent>
 
 	<artifactId>example-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<develpment.framework.version>0.3.1</develpment.framework.version>
+		<develpment.framework.version>0.4.1</develpment.framework.version>
 		<service.provider.class>
 			edu.mayo.cts2.framework.plugin.service.example.ExampleServiceProvider
 		</service.provider.class>
@@ -36,6 +36,56 @@
 			<version>${develpment.framework.version}</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<finalName>${project.name}</finalName>
+					<descriptors>
+						<descriptor>src/assemble/projectDistribute.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-3</version>
+
+				<executions>
+					<execution>
+						<id>upload-plugin-project-to-server</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>upload-single</goal>
+						</goals>
+						<configuration>
+							<serverId>site-upload-server</serverId>
+							<fromFile>${project.build.directory}/${project.name}-project.zip</fromFile>
+							<url>scp://informatics.mayo.edu:/home/informatics/homes/cts2framework/public_html/downloads/</url>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>upload-plugin-to-server</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>upload-single</goal>
+						</goals>
+						<configuration>
+							<serverId>site-upload-server</serverId>
+							<fromFile>${project.build.directory}/${project.name}-service-plugin.zip</fromFile>
+							<url>scp://informatics.mayo.edu:/home/informatics/homes/cts2framework/public_html/downloads/</url>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<repositories>
 		<repository>
