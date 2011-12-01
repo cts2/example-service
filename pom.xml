@@ -10,6 +10,23 @@
 
 	<artifactId>example-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<developers>
+		<developer>
+			<id>kevin</id>
+			<name>Kevin Peterson</name>
+			<email>kevin.peterson@mayo.edu</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Mayo Clinic</organization>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<developerConnection>scm:git:git@github.com:cts2/example-service.git</developerConnection>
+	</scm>
 
 	<properties>
 		<develpment.framework.version>0.4.1</develpment.framework.version>
