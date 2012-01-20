@@ -1,6 +1,7 @@
 package edu.mayo.cts2.framework.plugin.service.example;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Component;
 
 import edu.mayo.cts2.framework.model.codesystem.CodeSystemCatalogEntry;
 import edu.mayo.cts2.framework.model.command.ResolvedReadContext;
@@ -10,6 +11,7 @@ import edu.mayo.cts2.framework.model.service.core.ReadContext;
 import edu.mayo.cts2.framework.model.util.ModelUtils;
 import edu.mayo.cts2.framework.service.profile.codesystem.CodeSystemReadService;
 
+@Component
 public class ExampleCodeSystemCatalogReadService implements CodeSystemReadService {
 
 	public boolean exists(NameOrURI nameOrUri, ReadContext readContext) {
@@ -38,7 +40,7 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 				"The Code System: " + codeSystemName));
 		
 		entry.setResourceSynopsis(ed);
-			
+
 		return entry;
 	}
 	
