@@ -1,11 +1,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>edu.mayo.cts2.framework</groupId>
+		<artifactId>base-service-plugin</artifactId>
+		<version>0.4.9-SNAPSHOT</version>
+	</parent>
 
-	<groupId>edu.mayo.cts2.framework</groupId>
 	<artifactId>example-service</artifactId>
-	<version>0.4.2</version>
+	<version>${develpment.framework.version}</version>
 	<packaging>bundle</packaging>
+	
+	<description>An Example CTS2 Service Implementation</description>
+	<name>Example Service</name>
+
+	<inceptionYear>2012</inceptionYear>
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+	<organization>
+		<name>Mayo Clinic</name>
+		<url>http://mayo.edu</url>
+	</organization>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/cts2/example-service/issues</url>
+	</issueManagement>
 
 	<developers>
 		<developer>
@@ -23,16 +49,6 @@
 	<scm>
 		<developerConnection>scm:git:git@github.com:cts2/example-service.git</developerConnection>
 	</scm>
-
-	<properties>
-		<develpment.framework.version>0.4.9-SNAPSHOT</develpment.framework.version>
-		<service.provider.class>
-			edu.mayo.cts2.framework.plugin.service.example.ExampleServiceProvider
-		</service.provider.class>
-		<plugin.class>
-			edu.mayo.cts2.framework.plugin.service.example.ExampleServiceProvider
-		</plugin.class>
-	</properties>
 
 	<pluginRepositories>
 		<pluginRepository>
