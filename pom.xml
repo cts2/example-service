@@ -120,7 +120,7 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2.1</version>
 				<configuration>
-					<finalName>${artifactId}-source</finalName>
+					<finalName>${artifactId}</finalName>
 					<descriptors>
 						<descriptor>src/assemble/projectDistribute.xml</descriptor>
 					</descriptors>
@@ -165,8 +165,7 @@
 						</goals>
 						<configuration>
 							<serverId>site-upload-server</serverId>
-							<fromFile>${project.build.directory}/${artifactId}-source.zip</fromFile>
-							<toFile>${project.name}-project.zip</toFile>
+							<fromFile>${project.build.directory}/${artifactId}-project.zip</fromFile>
 							<url>scp://informatics.mayo.edu:/home/informatics/homes/cts2framework/public_html/downloads/</url>
 						</configuration>
 					</execution>
