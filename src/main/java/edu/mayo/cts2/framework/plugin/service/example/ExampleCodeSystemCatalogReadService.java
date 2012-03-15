@@ -1,17 +1,21 @@
 package edu.mayo.cts2.framework.plugin.service.example;
 
+import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Component;
 
 import edu.mayo.cts2.framework.model.codesystem.CodeSystemCatalogEntry;
 import edu.mayo.cts2.framework.model.command.ResolvedReadContext;
 import edu.mayo.cts2.framework.model.core.EntryDescription;
+import edu.mayo.cts2.framework.model.core.FormatReference;
+import edu.mayo.cts2.framework.model.core.NamespaceReference;
+import edu.mayo.cts2.framework.model.core.OpaqueData;
+import edu.mayo.cts2.framework.model.core.SourceReference;
 import edu.mayo.cts2.framework.model.service.core.NameOrURI;
 import edu.mayo.cts2.framework.model.service.core.ReadContext;
 import edu.mayo.cts2.framework.model.util.ModelUtils;
 import edu.mayo.cts2.framework.service.profile.codesystem.CodeSystemReadService;
 
-@Component
 public class ExampleCodeSystemCatalogReadService implements CodeSystemReadService {
 
 	public boolean exists(NameOrURI nameOrUri, ReadContext readContext) {
@@ -42,6 +46,48 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 		entry.setResourceSynopsis(ed);
 
 		return entry;
+	}
+
+	@Override
+	public FormatReference getDefaultFormat() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public List<NamespaceReference> getKnownNamespaceList() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public OpaqueData getServiceDescription() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public String getServiceName() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public SourceReference getServiceProvider() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public String getServiceVersion() {
+		// not needed for demo
+		return null;
+	}
+
+	@Override
+	public List<FormatReference> getSupportedFormatList() {
+		// not needed for demo
+		return null;
 	}
 	
 	
