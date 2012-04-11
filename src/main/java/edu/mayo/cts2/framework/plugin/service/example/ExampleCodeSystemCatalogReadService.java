@@ -7,18 +7,16 @@ import org.apache.commons.lang.StringUtils;
 import edu.mayo.cts2.framework.model.codesystem.CodeSystemCatalogEntry;
 import edu.mayo.cts2.framework.model.command.ResolvedReadContext;
 import edu.mayo.cts2.framework.model.core.EntryDescription;
-import edu.mayo.cts2.framework.model.core.FormatReference;
-import edu.mayo.cts2.framework.model.core.NamespaceReference;
 import edu.mayo.cts2.framework.model.core.OpaqueData;
 import edu.mayo.cts2.framework.model.core.SourceReference;
+import edu.mayo.cts2.framework.model.service.core.DocumentedNamespaceReference;
 import edu.mayo.cts2.framework.model.service.core.NameOrURI;
-import edu.mayo.cts2.framework.model.service.core.ReadContext;
 import edu.mayo.cts2.framework.model.util.ModelUtils;
 import edu.mayo.cts2.framework.service.profile.codesystem.CodeSystemReadService;
 
 public class ExampleCodeSystemCatalogReadService implements CodeSystemReadService {
 
-	public boolean exists(NameOrURI nameOrUri, ReadContext readContext) {
+	public boolean exists(NameOrURI nameOrUri, ResolvedReadContext readContext) {
 		//in this example, 'exists' is always true
 		return true;
 	}
@@ -49,18 +47,6 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 	}
 
 	@Override
-	public FormatReference getDefaultFormat() {
-		// not needed for demo
-		return null;
-	}
-
-	@Override
-	public List<NamespaceReference> getKnownNamespaceList() {
-		// not needed for demo
-		return null;
-	}
-
-	@Override
 	public OpaqueData getServiceDescription() {
 		// not needed for demo
 		return null;
@@ -85,10 +71,9 @@ public class ExampleCodeSystemCatalogReadService implements CodeSystemReadServic
 	}
 
 	@Override
-	public List<FormatReference> getSupportedFormatList() {
+	public List<DocumentedNamespaceReference> getKnownNamespaceList() {
 		// not needed for demo
-		return null;
+				return null;
 	}
-	
-	
+
 }
